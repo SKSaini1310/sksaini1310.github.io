@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sudhir Kumar Saini, PhD — Nanophotonics Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    --bg-dark:#0A0D13; --bg-dark2:#11151E;
+    --bg-light:#F6F5F1; --line-light: rgba(20,23,31,0.12);
+    --ink:#14171F; --ink-soft:#565C6B;
+    --paper:#FBFAF7;
+    --accent:#7C93FF; --accent-dim:#3E4A7A;
+    --gold:#CE9F52;
+    --on-dark:#E9EAEE; --on-dark-soft:#9BA1B0;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+  html,body{margin:0;padding:0;background:var(--bg-light);color:var(--ink);font-family:'Inter',Arial,sans-serif;}
+  img{max-width:100%;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Fraunces',Cambria,Georgia,serif;font-weight:500;margin:0;}
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono',Consolas,monospace;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:var(--bg-dark);color:var(--on-dark);overflow:hidden;}
+  #speckle{position:absolute;inset:0;width:100%;height:100%;opacity:0.55;}
+  .hero-inner{position:relative;z-index:2;padding:min(14vh,120px) 28px 90px;max-width:920px;margin:0 auto;}
+  .eyebrow{font-size:14px;color:var(--on-dark-soft);letter-spacing:0.02em;margin-bottom:18px;}
+  .hero h1{font-size:clamp(38px,6vw,64px);line-height:1.05;color:#fff;max-width:11ch;}
+  .hero .role{font-size:clamp(17px,2.2vw,21px);color:var(--on-dark-soft);margin-top:20px;max-width:46ch;line-height:1.5;font-family:'Fraunces',serif;font-weight:400;font-style:italic;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:44px;font-size:14px;color:var(--on-dark-soft);}
+  .hero-meta a{text-decoration:none;border-bottom:1px solid var(--accent-dim);padding-bottom:2px;color:var(--on-dark);}
+  .hero-meta a:hover{border-color:var(--accent);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:76px 0;}
+  section.alt{background:var(--paper);}
+  .kicker{font-size:13px;color:var(--gold);margin-bottom:10px;}
+  h2.title{font-size:clamp(26px,3.4vw,34px);margin-bottom:28px;max-width:24ch;}
+  p.lede{font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:66ch;}
+  .divider{height:1px;background:var(--line-light);border:none;margin:0;}
+
+  /* Summary */
+  .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start;}
+  .interests{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .interests span{font-size:13px;padding:7px 13px;border:1px solid var(--line-light);border-radius:100px;color:var(--ink-soft);}
+
+  /* Experience timeline */
+  .role{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line-light);}
+  .role:first-of-type{border-top:none;}
+  .role .when{font-size:13px;color:var(--ink-soft);padding-top:4px;}
+  .role h3{font-size:19px;margin-bottom:4px;}
+  .role .org{font-size:14.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .role p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:60ch;}
+
+  /* Education */
+  .edu-item{padding:22px 0;border-top:1px solid var(--line-light);}
+  .edu-item:first-of-type{border-top:none;}
+  .edu-item h3{font-size:18px;}
+  .edu-item .when{font-size:13px;color:var(--gold);margin-top:2px;}
+  .edu-item p{font-size:15px;color:var(--ink-soft);line-height:1.6;margin:8px 0 0;}
+
+  /* Publications */
+  .pub{padding:18px 0;border-top:1px solid var(--line-light);font-size:15px;line-height:1.6;}
+  .pub:first-of-type{border-top:none;}
+  .pub .venue{color:var(--accent-dim);font-family:'IBM Plex Mono',monospace;font-size:12.5px;margin-top:6px;}
+  .pub a{text-decoration:none;color:inherit;border-bottom:1px solid var(--line-light);}
+  .pub a:hover{border-color:var(--ink);}
+  .pub-note{margin-top:22px;font-size:14px;color:var(--ink-soft);}
+
+  /* Awards */
+  .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line-light);border:1px solid var(--line-light);}
+  .award{background:var(--paper);padding:20px 22px;font-size:14.5px;line-height:1.55;}
+  .award .yr{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);display:block;margin-bottom:6px;}
+
+  /* Skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px;}
+  .skill-cat h3{font-size:15px;margin-bottom:8px;color:var(--ink);}
+  .skill-cat p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  /* Footer */
+  footer{background:var(--bg-dark);color:var(--on-dark-soft);padding:70px 0 46px;}
+  footer h2{color:#fff;font-size:clamp(26px,4vw,38px);max-width:16ch;}
+  .foot-links{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 32px;font-size:15px;}
+  .foot-links a{text-decoration:none;color:var(--on-dark);border-bottom:1px solid var(--accent-dim);padding-bottom:2px;}
+  .foot-links a:hover{border-color:var(--accent);}
+  .foot-note{margin-top:56px;font-size:12.5px;color:#565C6B;}
+
+  @media (max-width:680px){
+    .summary-grid{grid-template-columns:1fr;gap:34px;}
+    .role{grid-template-columns:1fr;gap:6px;}
+    .role .when{padding-top:0;}
+    .awards{grid-template-columns:1fr;}
+    .skill-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <canvas id="speckle"></canvas>
+  <div class="hero-inner">
+    <div class="eyebrow">Nanophotonics · Disordered Photonics · Physical Unclonable Functions</div>
+    <h1>Sudhir Kumar Saini, PhD</h1>
+    <p class="role">Designing light through disorder — from bio-inspired photonic structures to unclonable security keys etched into silicon and glass.</p>
+    <div class="hero-meta">
+      <span>Postdoctoral Researcher, Istituto Italiano di Tecnologia · Genova</span>
+      <a href="mailto:sudhiriitrpr@gmail.com">sudhiriitrpr@gmail.com</a>
+      <a href="tel:+393514014999">+39 351 401 4999</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap summary-grid">
+    <div>
+      <div class="kicker">Profile</div>
+      <h2 class="title">Turning randomness into function</h2>
+      <p class="lede">A nanophotonics researcher specializing in photonic security, disordered photonics, metasurfaces, semiconductor nanostructures, and integrated photonic devices. Work translates concepts into experimentally demonstrated technologies through advanced nanofabrication and optical characterization, built across research groups in India and Europe and supported by competitive fellowships including an MSCA postdoctoral award.</p>
+    </div>
+    <div>
+      <div class="kicker">Research interests</div>
+      <div class="interests">
+        <span>Disordered Photonics</span>
+        <span>Physical Unclonable Functions</span>
+        <span>Metasurfaces</span>
+        <span>Integrated Photonic Circuits</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Experience</div>
+    <h2 class="title">Appointments</h2>
+
+    <div class="role">
+      <div class="when mono">2024 — present</div>
+      <div>
+        <h3>Postdoctoral Researcher</h3>
+        <div class="org">Istituto Italiano di Tecnologia (IIT), Genova · PI: Prof. Roman Krahne, Optoelectronics</div>
+        <p>Leads two projects: biodegradable physically unclonable functions (PUFs) for optical security, and hybrid integration of layered perovskites with Si₃N₄ photonic structures for controlling light–matter interactions — spanning device design, nanofabrication, optical characterization, and photonic integration.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when mono">2021 — 2023</div>
+      <div>
+        <h3>Postdoctoral Researcher</h3>
+        <div class="org">University of Twente, The Netherlands · PI: Prof. Pepijn Pinkse, Adaptive Quantum Optics</div>
+        <p>Pioneered PUF keys on a photonic-chip platform, designing mirror-symmetric photonic media via FDTD modeling and fabricating them with direct laser writing — producing unique, near-impossible-to-replicate identifiers verified through rigorous optical characterization.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when mono">2013 — 2015</div>
+      <div>
+        <h3>Junior Project Fellow</h3>
+        <div class="org">CSIR-CEERI, Pilani, India · PI: Dr. Ajay Agarwal (MEMS), Dr. Pankaj B. Agarwal (SNTG)</div>
+        <p>Developed advanced security features and substrates for Indian currency notes, fabricating metasurfaces via Dip Pen Nanolithography and characterizing their optical performance for anti-counterfeiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Education</div>
+    <h2 class="title">Academic background</h2>
+
+    <div class="edu-item">
+      <h3>Ph.D. in Nanophotonics</h3>
+      <div class="when">Indian Institute of Technology (IIT) Ropar · 2015 – 2021</div>
+      <p>Thesis: "Studies on Bio-inspired Photonic Structures for Multifunctional Applications," supervised by Dr. Rajesh V. Nair. Focused on designing and fabricating bio-inspired photonic structures, characterized via micro-reflectivity, micro-photoluminescence, and time-resolved emission spectroscopy.</p>
+    </div>
+    <div class="edu-item">
+      <h3>B.Tech (Honors), Electronics &amp; Communication</h3>
+      <div class="when">Global Institute of Technology, Jaipur, India · 2007 – 2011</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Publications</div>
+    <h2 class="title">Selected peer-reviewed journal articles</h2>
+
+    <div class="pub">
+      Mirror Symmetry in three-dimensional Multiple-Scattering Media
+      <div class="venue">Physical Review Letters 133, 223802 (2024) · Front Cover · <a href="https://doi.org/10.1103/PhysRevLett.133.223802" target="_blank" rel="noopener">doi.org/10.1103/PhysRevLett.133.223802</a></div>
+    </div>
+    <div class="pub">
+      Direct Growth of Rectangular 2D Layered Metal-Halide Perovskite Microcrystal Photonic Cavities on Functional Substrates
+      <div class="venue">Advanced Optical Materials, e01276 (2025) · <a href="https://doi.org/10.1002/adom.202501276" target="_blank" rel="noopener">doi.org/10.1002/adom.202501276</a></div>
+    </div>
+    <div class="pub">
+      Selective frequency gap induced negative anisotropic scattering in designer photonic structure with short-range order
+      <div class="venue">Physical Review A 102, 033529 (2020) · <a href="https://doi.org/10.1103/PhysRevA.102.033529" target="_blank" rel="noopener">doi.org/10.1103/PhysRevA.102.033529</a></div>
+    </div>
+    <div class="pub">
+      Polymer-based self-assembled photonic crystals to tune light transport and emission
+      <div class="venue">Chemical Communications 58, 1481 (2022) · <a href="https://doi.org/10.1039/D1CC05787A" target="_blank" rel="noopener">doi.org/10.1039/D1CC05787A</a></div>
+    </div>
+    <div class="pub">
+      Characteristics of bioinspired nontoxic and chemically stable disordered silicon nanopyramids
+      <div class="venue">ACS Biomaterials Science &amp; Engineering 6, 2778 (2020) · <a href="https://doi.org/10.1021/acsbiomaterials.9b01963" target="_blank" rel="noopener">doi.org/10.1021/acsbiomaterials.9b01963</a></div>
+    </div>
+    <div class="pub">
+      Quantitative analysis of gradient effective refractive index in silicon nanowires for broadband light trapping and anti-reflective properties
+      <div class="venue">Journal of Applied Physics 125, 103102 (2019) · <a href="https://doi.org/10.1063/1.5083902" target="_blank" rel="noopener">doi.org/10.1063/1.5083902</a></div>
+    </div>
+    <p class="pub-note">11 peer-reviewed journal articles, 8 peer-reviewed proceedings, and 24 international conference presentations in total — full list available on request.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Recognition</div>
+    <h2 class="title">Awards &amp; fellowships</h2>
+    <div class="awards">
+      <div class="award"><span class="yr">2025</span>Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship, KIT, Germany</div>
+      <div class="award"><span class="yr">2024</span>Marie Skłodowska-Curie Actions (MSCA) Seal of Excellence</div>
+      <div class="award"><span class="yr">2022</span>Travel grant, Complex Nanophotonics Science</div>
+      <div class="award"><span class="yr">2021</span>Incubic Milton Chang Travel Grant, CLEO</div>
+      <div class="award"><span class="yr">2019</span>SPIE student travel grant</div>
+      <div class="award"><span class="yr">2019</span>DST Govt. of India, International travel grant</div>
+      <div class="award"><span class="yr">2015</span>Visvesvaraya PhD Fellowship, MeitY (India), IIT Ropar</div>
+      <div class="award"><span class="yr">2014</span>Best Student Paper Award, OSA Photonics, IIT Kharagpur</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Toolkit</div>
+    <h2 class="title">Technical skills</h2>
+    <div class="skill-grid">
+      <div class="skill-cat">
+        <h3>Simulation</h3>
+        <p>Lumerical FDTD, STACK &amp; MODE solver, WaveSim</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Cleanroom fabrication</h3>
+        <p>Photolithography, electron beam lithography, dip pen nanolithography, direct laser writing, wet &amp; dry etching, thermal &amp; sputtered thin films</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Characterization</h3>
+        <p>SEM, AFM, Raman, photoluminescence, spectrophotometry, stylus profilometry</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Optical instrumentation</h3>
+        <p>Design &amp; build of automated setups — micro-optical imaging, micro-reflectivity, emission, and coherent backscattering</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Lasers</h3>
+        <p>Nd-YAG ns laser, supercontinuum ps lasers, CW diode lasers</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Programming</h3>
+        <p>MATLAB, Python (basics)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Let's talk photonics.</h2>
+    <div class="foot-links">
+      <a href="mailto:sudhiriitrpr@gmail.com">sudhiriitrpr@gmail.com</a>
+      <a href="tel:+393514014999">+39 351 401 4999</a>
+      <span>Via Campodonico 16, Genova, Italy</span>
+    </div>
+    <div class="foot-note">Sudhir Kumar Saini, PhD — Nanophotonics Researcher, IIT Genova</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var canvas = document.getElementById('speckle');
+  var ctx = canvas.getContext('2d');
+  var hero = canvas.parentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var points = [];
+  var mouse = {x:0.5, y:0.5};
+
+  function size(){
+    var w = hero.offsetWidth, h = hero.offsetHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.style.width = w+'px'; canvas.style.height = h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n = Math.floor((w*h)/2600);
+    points = [];
+    for(var i=0;i<n;i++){
+      points.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*1.6 + 0.4,
+        a: Math.random()*0.6 + 0.15,
+        s: Math.random()*0.6 + 0.2
+      });
+    }
+  }
+
+  function draw(){
+    var w = hero.offsetWidth, h = hero.offsetHeight;
+    ctx.clearRect(0,0,w,h);
+    var mx = mouse.x*w, my = mouse.y*h;
+    for(var i=0;i<points.length;i++){
+      var p = points[i];
+      var dx = p.x-mx, dy = p.y-my;
+      var dist = Math.sqrt(dx*dx+dy*dy);
+      var boost = Math.max(0, 1 - dist/260) * 0.5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(124,147,255,' + Math.min(1,p.a+boost) + ')';
+      ctx.fill();
+    }
+  }
+
+  size();
+  draw();
+  window.addEventListener('resize', function(){ size(); draw(); });
+  if(!reduce){
+    hero.addEventListener('mousemove', function(e){
+      var rect = hero.getBoundingClientRect();
+      mouse.x = (e.clientX-rect.left)/rect.width;
+      mouse.y = (e.clientY-rect.top)/rect.height;
+      requestAnimationFrame(draw);
+    });
+  }
+})();
+</script>
+</body>
+</html>
