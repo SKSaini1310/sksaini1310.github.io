@@ -103,6 +103,21 @@
   .foot-links a:hover{border-color:var(--accent);}
   .foot-note{margin-top:56px;font-size:12.5px;color:#565C6B;}
 
+
+  nav.tabs .wrap{max-width:1100px;align-items:center;}
+  nav.tabs img.avatar{width:34px;height:34px;border-radius:50%;object-fit:cover;margin-right:14px;border:1px solid rgba(255,255,255,0.25);flex:none;}
+  nav.tabs a.cv{margin-left:auto;color:var(--gold);}
+  .btns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+  .btn{font-size:14px;text-decoration:none;padding:11px 22px;border:1px solid var(--accent);color:#fff;border-radius:3px;}
+  .btn.solid{background:var(--accent);color:#0A0D13;font-weight:600;}
+  .btn:hover{opacity:.85;}
+  .proj{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line-light);}
+  .proj:first-of-type{border-top:none;}
+  .proj .n{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold);padding-top:5px;}
+  .proj h3{font-size:19px;margin-bottom:4px;}
+  .proj .who{font-size:14px;color:var(--ink-soft);margin-bottom:10px;}
+  .proj p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:62ch;}
+
   @media (max-width:680px){
     .summary-grid{grid-template-columns:1fr;gap:34px;}
     .role{grid-template-columns:1fr;gap:6px;}
@@ -116,12 +131,17 @@
 
 <nav class="tabs" id="site-nav">
   <div class="wrap">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About Me</a>
+    <a href="#home" class="active" aria-label="Home"><img class="avatar" alt="Sudhir Kumar Saini" src="data:image/jpeg;base64,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"></a>
+    <a href="#about">About</a>
     <a href="#publications">Publications</a>
     <a href="#awards">Awards</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
     <a href="#skills">Skills</a>
-    <a href="#contact">Contact Me</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <a href="cv.pdf" class="cv" target="_blank" rel="noopener">Curriculum Vitae</a>
   </div>
 </nav>
 
@@ -130,8 +150,9 @@
   <canvas id="speckle"></canvas>
   <div class="hero-inner">
     <div class="eyebrow">Nanophotonics · Disordered Photonics · Physical Unclonable Functions</div>
-    <h1>Sudhir Kumar Saini, PhD</h1>
+    <h1>Hi, I'm Sudhir Kumar Saini.</h1>
     <p class="role">Designing light through disorder — from bio-inspired photonic structures to unclonable security keys etched into silicon and glass.</p>
+    <div class="btns"><a class="btn solid" href="#about">Read More</a><a class="btn" href="#contact">Contact Me</a></div>
     <div class="hero-meta">
       <span>Postdoctoral Researcher, Istituto Italiano di Tecnologia · Genova</span>
       <a href="mailto:sudhiriitrpr@gmail.com">sudhiriitrpr@gmail.com</a>
@@ -181,57 +202,6 @@
         <span>Metasurfaces</span>
         <span>Integrated Photonic Circuits</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="kicker">Experience</div>
-    <h2 class="title">Appointments</h2>
-
-    <div class="role">
-      <div class="when mono">2024 — present</div>
-      <div>
-        <h3>Postdoctoral Researcher</h3>
-        <div class="org">Istituto Italiano di Tecnologia (IIT), Genova · PI: Prof. Roman Krahne, Optoelectronics</div>
-        <p>Leads two projects: biodegradable physically unclonable functions (PUFs) for optical security, and hybrid integration of layered perovskites with Si₃N₄ photonic structures for controlling light–matter interactions — spanning device design, nanofabrication, optical characterization, and photonic integration.</p>
-      </div>
-    </div>
-
-    <div class="role">
-      <div class="when mono">2021 — 2023</div>
-      <div>
-        <h3>Postdoctoral Researcher</h3>
-        <div class="org">University of Twente, The Netherlands · PI: Prof. Pepijn Pinkse, Adaptive Quantum Optics</div>
-        <p>Pioneered PUF keys on a photonic-chip platform, designing mirror-symmetric photonic media via FDTD modeling and fabricating them with direct laser writing — producing unique, near-impossible-to-replicate identifiers verified through rigorous optical characterization.</p>
-      </div>
-    </div>
-
-    <div class="role">
-      <div class="when mono">2013 — 2015</div>
-      <div>
-        <h3>Junior Project Fellow</h3>
-        <div class="org">CSIR-CEERI, Pilani, India · PI: Dr. Ajay Agarwal (MEMS), Dr. Pankaj B. Agarwal (SNTG)</div>
-        <p>Developed advanced security features and substrates for Indian currency notes, fabricating metasurfaces via Dip Pen Nanolithography and characterizing their optical performance for anti-counterfeiting.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="kicker">Education</div>
-    <h2 class="title">Academic background</h2>
-
-    <div class="edu-item">
-      <h3>Ph.D. in Nanophotonics</h3>
-      <div class="when">Indian Institute of Technology (IIT) Ropar · 2015 – 2021</div>
-      <p>Thesis: "Studies on Bio-inspired Photonic Structures for Multifunctional Applications," supervised by Dr. Rajesh V. Nair. Focused on designing and fabricating bio-inspired photonic structures, characterized via micro-reflectivity, micro-photoluminescence, and time-resolved emission spectroscopy.</p>
-    </div>
-    <div class="edu-item">
-      <h3>B.Tech (Honors), Electronics &amp; Communication</h3>
-      <div class="when">Global Institute of Technology, Jaipur, India · 2007 – 2011</div>
     </div>
   </div>
 </section>
@@ -286,7 +256,59 @@
   </div>
 </section>
 
-<section class="alt" id="skills">
+<section class="alt" id="experience">
+  <div class="wrap">
+    <div class="kicker">Experience</div>
+    <h2 class="title">Positions held</h2>
+
+    <div class="role">
+      <div class="when mono">2024 — present</div>
+      <div>
+        <h3>Postdoctoral Researcher</h3>
+        <div class="org">Istituto Italiano di Tecnologia (IIT), Genova · PI: Prof. Roman Krahne, Optoelectronics</div>
+        <p>Leads two projects: biodegradable physically unclonable functions (PUFs) for optical security, and hybrid integration of layered perovskites with Si₃N₄ photonic structures for controlling light–matter interactions — spanning device design, nanofabrication, optical characterization, and photonic integration.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when mono">2021 — 2023</div>
+      <div>
+        <h3>Postdoctoral Researcher</h3>
+        <div class="org">University of Twente, The Netherlands · PI: Prof. Pepijn Pinkse, Adaptive Quantum Optics</div>
+        <p>Pioneered PUF keys on a photonic-chip platform, designing mirror-symmetric photonic media via FDTD modeling and fabricating them with direct laser writing — producing unique, near-impossible-to-replicate identifiers verified through rigorous optical characterization.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when mono">2013 — 2015</div>
+      <div>
+        <h3>Junior Project Fellow</h3>
+        <div class="org">CSIR-CEERI, Pilani, India · PI: Dr. Ajay Agarwal (MEMS), Dr. Pankaj B. Agarwal (SNTG)</div>
+        <p>Developed advanced security features and substrates for Indian currency notes, fabricating metasurfaces via Dip Pen Nanolithography and characterizing their optical performance for anti-counterfeiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research"><div class="wrap">
+    <div class="kicker">Research</div>
+    <h2 class="title">Projects</h2>
+    <div class="proj"><div class="n">01</div><div><h3>Biodegradable physically unclonable functions</h3><div class="who">Prof. Roman Krahne, Istituto Italiano di Tecnologia</div><p>Designing biodegradable PUFs for optical security: unique, hard-to-replicate optical identifiers that leave no lasting waste.</p></div></div>
+    <div class="proj"><div class="n">02</div><div><h3>Layered perovskites on Si₃N₄ photonic structures</h3><div class="who">Prof. Roman Krahne, Istituto Italiano di Tecnologia</div><p>Hybrid integration of 2D layered perovskites with silicon-nitride photonic crystals to control light–matter coupling on chip.</p></div></div>
+    <div class="proj"><div class="n">03</div><div><h3>Mirror-symmetric multiple-scattering media</h3><div class="who">Prof. Pepijn Pinkse, University of Twente</div><p>FDTD-designed, direct-laser-written photonic media with engineered symmetry, giving PUF keys on a photonic chip platform. Published as a Physical Review Letters cover article.</p></div></div>
+    <div class="proj"><div class="n">04</div><div><h3>Bio-inspired disordered photonic structures</h3><div class="who">Dr. Rajesh V. Nair, IIT Ropar (PhD)</div><p>Light transport and emission in disordered silicon nanowires, nanopyramids and photonic structures with short-range order, inspired by butterfly wing scales.</p></div></div>
+    <div class="proj"><div class="n">05</div><div><h3>Metasurface security features for banknotes</h3><div class="who">Dr. Ajay Agarwal and Dr. Pankaj B. Agarwal, CSIR-CEERI</div><p>Dip Pen Nanolithography metasurfaces on varied substrates for anti-counterfeiting patterns on Indian currency notes.</p></div></div>
+  </div></section>
+
+<section class="alt" id="teaching"><div class="wrap">
+    <div class="kicker">Teaching</div>
+    <h2 class="title">Teaching &amp; mentoring</h2>
+    <div class="role"><div class="when mono">IIT Ropar · Twente</div><div><h3>Teaching assistant</h3><div class="org">Physics Experimental Lab (B.Tech), Electronics Lab (postgraduate)</div><p>Guided undergraduate and postgraduate students through laboratory courses at IIT Ropar and the University of Twente.</p></div></div>
+    <div class="role"><div class="when mono">2017 — 2023</div><div><h3>Co-supervision</h3><div class="org">4 master's students and 1 bachelor's student</div><p>Co-supervised thesis projects at IIT Ropar and the University of Twente.</p></div></div>
+    <div class="role"><div class="when mono">IIT Ropar</div><div><h3>OPTICA student chapter president</h3><div class="org">Organizer of the "Illumine" online lecture series</div><p>Led the chapter and ran a public lecture series on optics and photonics.</p></div></div>
+  </div></section>
+
+<section id="skills">
   <div class="wrap">
     <div class="kicker">Toolkit</div>
     <h2 class="title">Technical skills</h2>
@@ -315,6 +337,23 @@
         <h3>Programming</h3>
         <p>MATLAB, Python (basics)</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="wrap">
+    <div class="kicker">Education</div>
+    <h2 class="title">Academic background</h2>
+
+    <div class="edu-item">
+      <h3>Ph.D. in Nanophotonics</h3>
+      <div class="when">Indian Institute of Technology (IIT) Ropar · 2015 – 2021</div>
+      <p>Thesis: "Studies on Bio-inspired Photonic Structures for Multifunctional Applications," supervised by Dr. Rajesh V. Nair. Focused on designing and fabricating bio-inspired photonic structures, characterized via micro-reflectivity, micro-photoluminescence, and time-resolved emission spectroscopy.</p>
+    </div>
+    <div class="edu-item">
+      <h3>B.Tech (Honors), Electronics &amp; Communication</h3>
+      <div class="when">Global Institute of Technology, Jaipur, India · 2007 – 2011</div>
     </div>
   </div>
 </section>
